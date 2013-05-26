@@ -1,0 +1,36 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body onload="">
+	<!-- noscript -->
+	<noscript>
+		<p>申し訳ございませんが、このページはJavaScriptを有効してご覧ください</p>
+	</noscript>
+	<!-- alert -->
+	<h3>Example 1: Alert()</h3>
+
+	<script type="text/javascript">
+	function hello() {
+		alert('Hello World');
+	}
+	</script>
+	<div>
+		<a onclick="hello();" href="#">alert box</a>
+	</div>
+
+	<hr />
+
+	<!-- document object-->
+	<script type="text/javascript">
+		//window.onload = hello2;
+		function hello2 () {
+			var msg = "Hello World";
+			document.open();
+			document.writeln(msg);
+			document.close();
+		}
+	</script>
+
+</body>
+</html>

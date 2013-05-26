@@ -1,0 +1,98 @@
+１.<script>...</script>は文書の最後に置いて、まずドキュメントのほかの要素をロードしてから、スクリプトをロードすること。
+理由：
+①スクリプトを<head>部に置くことより、サーバからスクリプトをダウンロードしている間、
+body部に置かれたドキュメント本体などほかの部分のダウンロードが中断されてしまう。
+②<script>...</script>の間に画面表示に影響がある出力がなされる可能性があるため、
+ページのレンダリング（描画「びょうが」）処理は中断しなければならない場合がある。
+
+イベントハンドラ
+onclick
+onmouseover
+onmouseout
+onfocus
+onblur : onfocusの逆
+
+BOM : Browser Object Model
+DOM : Document Object Model
+
+プロパティ演算子「えんざんし」：オブジェクトのプロパティを参照する
+例えば：document.write の 「.」
+
+ファイルを引用
+<script type="text/javascript" src="hogehoge.js"><script>
+
+Number 数値が０かNaNの場合は false, それ以外はtrue
+String 空の文字列の場合は false,  それ以外はtrue
+
+整数範囲：-2^53 ~ 2^52, 実際に使う時、-2^31 ~ 2^31 に収めたほうがいい
+計算結果にオーバーフローが発生したときはいつでも正の無限大が返される
+
+URL encode/ decode
+encodeURL(orginStr)
+encodeURLComponent(orginStr)
+decodeURL(encodedStr)
+decodeURLComponent(encodeStr)
+
+
+var iValue = parseInt("B2", 16); // 16 進数として解釈
+var fValue = parseFloat("1.48");
+遅いため、最近
+
+javascriptの高速化テク
+http://next-nex.info/?s=190
+
+文字列のリレラルより、
+その文字列のプロパティやメソッドを頻繁に利用するならば、
+最初からStringオブジェクトを生成したほうが効率がよくなる
+
+=== 厳密等価演算子 値とデータ型の両方が等しい
+!==
+
+if () {
+	
+} else if () {
+	
+} else {
+	
+}
+
+swiitch (expr) {
+	case "A":
+		...
+		break;
+	case "B":
+		...
+		break;
+	case "C":
+	case "D":
+		...
+		break;
+	default:
+		...
+}
+
+while () {
+	
+}
+
+do {
+	
+} while ()
+
+for(var i = 0 ,len = array.length; i < len ; i++ ){
+}
+
+
+function 関数名 (引数１、引数２、...) {
+	...
+}
+
+var boolFrag = new Boolean("false") -- 結果はtrue
+var boolFrag = new Boolean(false)   -- 結果はfalse
+
+Number.MAX_VALUE : jsで表現可能な最大数
+Number.MIN_VALUE : jsで表現可能な正の最小数
+Number.NaN : リテラルのNaNに対応 Not A Number
+Number.NEGATIVE_INFINITY : 負の無限大。リテラルの-Infinityに対応
+Number.POSITIVE_INFINITY : 正の無限大。リテラルのInfinityに対応
+
