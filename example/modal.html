@@ -1,0 +1,47 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript">
+		window.onload = function () {
+			//var view = document.querySelector('.js-menu-view');
+
+			// touchend で動けない？！なぜですか
+			document.body.addEventListener('click', function (ev) {
+				var target = ev.target;
+				switch (target.className) {
+					case 'js-menu-link':
+						ev.preventDefault();
+
+						var view = target.parentNode.lastElementChild;
+						if (view.style.display == "none") {
+							view.style.display = "block";
+						} else {
+							view.style.display = "none";
+						}
+						break;
+					default:
+						break;
+				}
+			}, false);
+		};
+	</script>
+</head>
+<body>
+	<!-- onEvent -->
+	<h3>Example 2: On Event</h3>
+	<div class="js-menu-box">
+		<a href="#" class="js-menu-link">menu</a>
+
+		<div class="js-menu-view" id="js-menu-view" style="display: none;">
+			Hello World!
+		</div>
+	</div>
+	<div class="js-menu-box">
+		<a href="#" class="js-menu-link">menu</a>
+
+		<div class="js-menu-view" id="js-menu-view" style="display: none;">
+			Hello World!
+		</div>
+	</div>
+</body>
+</html>

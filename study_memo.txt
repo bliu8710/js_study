@@ -49,14 +49,14 @@ http://next-nex.info/?s=190
 !==
 
 if () {
-	
+
 } else if () {
-	
+
 } else {
-	
+
 }
 
-swiitch (expr) {
+switch (expr) {
 	case "A":
 		...
 		break;
@@ -72,11 +72,11 @@ swiitch (expr) {
 }
 
 while () {
-	
+
 }
 
 do {
-	
+
 } while ()
 
 for(var i = 0 ,len = array.length; i < len ; i++ ){
