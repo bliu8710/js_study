@@ -95,4 +95,56 @@ Number.MIN_VALUE : jsで表現可能な正の最小数
 Number.NaN : リテラルのNaNに対応 Not A Number
 Number.NEGATIVE_INFINITY : 負の無限大。リテラルの-Infinityに対応
 Number.POSITIVE_INFINITY : 正の無限大。リテラルのInfinityに対応
+Numberのメソッド
+toExponential, toPrecision, toFixed, toString, valueOf
 
+Stringのメソド
+valueOf, length, anchor, big, blink, bold, italics, small, strike, sub, sup, charAt,
+charCodeAt, indexOf, lastIndexOf, link, concat, split, slice, substring, substr,
+match, replace, search, toLowerCase, toUpperCase
+
+正規表現 RegExp
+var re = new RegExp("JS*", "ig"); //
+var re = /JS*/ig;
+if (re.test(str)) alter('match'); //test メソッド
+var resultArray = re.exec("JSfasdf"); //exec メソッド マッチした文字列を返す
+i: ignore case
+g: global
+m: multiline
+
+Date
+var dtNow = new Date();
+function getUnixTime() { ~~((new Date)/1000); }
+
+Math
+E, LN10, LN2, LOG2E, LOG10E, PI, SQRT1_2, SQRT2
+sin, cos, tan, acos, asin, atan, atan2
+ceil, floor, round
+exp, pow
+min, max
+乱数
+0 <= Math.random() < 1
+1 < Math.floor(Math.random()*10)+1 < 10
+
+Array
+var newArray = new Array('one', 'two');
+var newArray = ['one', 'two'];
+メソッド
+splice, slice, concat, push, pop, shift, unshift
+
+再帰関数：递归 recursion
+関数クロージャ: function closure 関数の中で関数定義があります	
+コールバック関数
+Array Obj:
+filter, forEach, every, map, some
+引数 (element, index, array)
+new Array().filter(function (element, index, array) {
+
+});
+
+イベント駆動(くどう)
+イベントの種類
+abort, blur, focus, change, click, doubleclick(dblclick),
+contextmenu, error, keydown, keyup. keypress, load, unload,
+mousedown, mouseup, mouseover, mouseout, mousemove,
+reset, resize, select, scroll, submit 

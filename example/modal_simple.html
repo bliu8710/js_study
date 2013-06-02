@@ -1,16 +1,40 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/global.css">
 	<script type="text/javascript">
 
-	document.addEventListener("DOMContentLoaded", load, false);
+    var touchStartEvent = 'ontouchstart' in window ? 'touchstart' : 'mousedown',
+    	touchMoveEvent  = 'ontouchmove'  in window ? 'touchmove'  : 'mousemove',
+    	touchEndEvent   = 'ontouchend'   in window ? 'touchend'   : 'mouseup';
 
+
+	// window.onload のかわりに、DOMContentLoaded使う
+	document.addEventListener("DOMContentLoaded", load, false);
 
 	/*
 	** load when DOMContentLoaded
 	*/
 	function load () {
+		var link = document.querySelector('.js-menu-link');
+		var view = document.querySelector('.js-menu-view');
 
+		link.addEventListener(touchEndEvent, function (ev) {
+			//alert(touchEndEvent);
+
+			/* classList
+			** 追加：element.classList.add();
+			** 削除：element.classList.remove();
+			** 変更：element.classList.toggle();
+			** 確認：element.classList.contains();
+			*/
+			view.classList.toggle('disabled');
+			// if (view.classList.contains('disabled')) {
+			// 	view.classList.remove('disabled');
+			// } else {
+			// 	view.classList.add('disabled');
+			// }
+		}, false);
 	}
 	</script>
 </head>
@@ -20,7 +44,7 @@
 	<div class="js-menu-box">
 		<a href="#" class="js-menu-link">menu</a>
 
-		<div class="js-menu-view" style="display: none;">
+		<div class="js-menu-view disabled">
 			Hello World!
 		</div>
 	</div>
