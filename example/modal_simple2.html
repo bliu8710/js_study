@@ -19,26 +19,22 @@
 		var link = document.querySelector('.js-menu-link');
 		var view = document.querySelector('.js-menu-view');
 
-		link.addEventListener(touchStartEvent, touchHandler, false);
-		link.addEventListener(touchEndEvent, touchHandler, false);
+		link.addEventListener(touchEndEvent, function (ev) {
+			//alert(touchEndEvent);
 
-		function touchHandler (ev) {
-			ev.preventDefault();
-			switch (ev.type) {
-				case touchStartEvent :
-					if (view.classList.contains('disabled')) {
-						view.classList.remove('disabled');
-					}
-					break;
-				case touchEndEvent :
-					if (!view.classList.contains('disabled')) {
-						view.classList.add('disabled');
-					}
-					break;
-				default :
-					break;
+			/* classList
+			** 追加：element.classList.add();
+			** 削除：element.classList.remove();
+			** 変更：element.classList.toggle();
+			** 確認：element.classList.contains();
+			*/
+			//view.classList.toggle('disabled');
+			if (view.classList.contains('disabled')) {
+				view.classList.remove('disabled');
+			} else {
+				view.classList.add('disabled');
 			}
-		}
+		}, false);
 	}
 	</script>
 </head>
